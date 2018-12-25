@@ -1,0 +1,7 @@
+{
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/bower_components": false,
+    "**/dist": true
+  }
+}
