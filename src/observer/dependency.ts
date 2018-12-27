@@ -8,7 +8,7 @@ import Watcher from './watcher';
  * @constructor
  */
 export default class Dependency {
-  public static target: Watcher;
+  public static target: Watcher | undefined;
   public subscriptions: Watcher[] = [];
 
   /**
@@ -57,8 +57,8 @@ export default class Dependency {
 // the current target watcher being evaluated.
 // this is globally unique because there could be only one
 // watcher being evaluated at any time.
-Dependency.target = null;
-const targetStack = [];
+Dependency.target = undefined;
+const targetStack: Watcher[] = [];
 
 export function pushTarget(target: Watcher) {
   if (Dependency.target) { targetStack.push(Dependency.target); }
