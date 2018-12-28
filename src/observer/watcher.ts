@@ -50,7 +50,7 @@ export default class Watcher {
    * @param dependency dependency to add
    */
   public addDependency(dependency: Dependency) {
-    if (dependency.subscriptions.indexOf(this) > -1) {
+    if (dependency.subscriptions.indexOf(this) === -1) {
       dependency.addSubscription(this);
     }
   }
